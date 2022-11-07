@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreposService } from 'src/app/service/storepos.service';
 // declare var $: any;
 @Component({
   selector: 'app-storepos',
@@ -7,11 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreposComponent implements OnInit {
 
-  constructor() {
-   
+  constructor(
+    private storeService: StoreposService
+  ) {
+    
    }
 
   ngOnInit(): void {
+    this.getAllCategory();
+  }
+
+  getAllCategory(){
+    this.storeService.getProductsCategory()
+    .subscribe(
+      (res) => {
+        console.log(res)
+      }
+    )
   }
 
 }

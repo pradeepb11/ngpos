@@ -1,0 +1,81 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="">
+                        <div class="text-center">
+                            <img _ngcontent-ghe-c79="" src="../../../assets/img/logo01.png" width="150" alt="AngularPOS" routerlink="/home" tabindex="0" ng-reflect-router-link="/home">
+                            <h4>Authentification</h4>
+                        </div>
+
+                        <hr>
+                        <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+                            <!-- username  -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label text-muted text-left" for="username">Email ID<span class="text-danger">*</span>
+                      </label>
+                                <input type="email" id="username" class="form-control" placeholder="Email id" formControlName="email" autocomplete="off" [ngClass]="{
+                                  'is-invalid': submitted && f['email'].errors && f['email'].touched,
+                                  'is-valid': f['email'].touched && f['email'].valid 
+                                  }" />
+                                <div *ngIf="f['email'].touched && f['email'].invalid" class="invalid-feedback">
+                                    <div *ngIf="f['email'].errors?.['required']">
+                                        Please Enter Your Email Id!
+                                    </div>
+
+                                    <div *ngIf="f['email'].errors?.['pattern']">
+                                        Email is invalid !
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <!-- / username  -->
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-4 posrelative">
+
+                                <label class="form-label text text-muted text-left" for="password">Password <span class="text-danger">*</span></label>
+                                <!-- <div class="float-end">
+                                    <a routerLink="/auth/forgotpassword" class="text-small text-primary text-darkb">
+                            Forgot Password?
+                          </a>
+                                </div> -->
+                                <input [type]="show_button ? 'text' : 'password'" id="password" class="form-control " formControlName="password" placeholder="Password" autocomplete="off" [ngClass]="{
+                                  'is-invalid': submitted && f['password'].errors && f['password'].touched,
+                                  'is-valid': f['password'].touched && f['password'].valid 
+                              }" />
+                                <i class="posabso iconsright" [class]="show_eye ? 'fas ms-2 fa-eye' : 'fas ms-2 fa-eye-slash'" (click)="showPassword()"></i>
+                                <div *ngIf="f['password'].touched && f['password'].invalid" class="invalid-feedback">
+                                    <div *ngIf="f['password'].errors?.['required']">
+                                        Please Enter Your Password!
+                                    </div>
+                                    <div *ngIf="f['password'].errors?.['minlength']">
+                                        Password must be at least 6 characters
+                                    </div>
+                                    <div *ngIf="f['password'].errors?.['maxlength']">
+                                        Password must not exceed 20 characters
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- / Password input -->
+                            <input type="hidden" name="" formControlName="role">
+
+                            <!-- Submit button -->
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-b-dark text-dark text-uppercase fs-5 " type="submit" [disabled]="!loginForm.valid">Login</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

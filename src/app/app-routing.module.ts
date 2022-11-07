@@ -8,6 +8,7 @@ const routes: Routes = [
     path: '', loadChildren: () => import('./public/home/home.module').then(m => m.HomeModule)
   },
   { path: 'storepos', loadChildren: () => import('./view/pages/storepos/storepos.module').then(m => m.StoreposModule) },
+  { path: 'loginpos', loadChildren: () => import('./public/loginpos/loginpos.module').then(m => m.LoginposModule) },
   {
   path:'',
   component: BaseComponent,
@@ -18,6 +19,7 @@ const routes: Routes = [
    
   ]
   },
+  
   {
     path:'**', redirectTo:'/home'
   }

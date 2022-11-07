@@ -32,6 +32,7 @@
                         ],
                         "styles": [
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                            "src/assets/plugin/fontawesome-free/css/all.min.css",
                             "src/assets/css/theme.css",
                             "src/assets/css/OverlayScrollbars.min.css",
                             "src/styles.scss"
