@@ -1,0 +1,83 @@
+.header-main {
+    background-color: #f1f1f17a;
+}
+
+.cart {
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.page_cate {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.content {
+    width: 100%;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    // border: 1px solid #ddd;
+}
+
+.page::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: calc(100% - 20px);
+    top: 10px;
+    right: -1px;
+    width: 5px;
+    // background: #666;
+    background: #fff;
+}
+
+.page_cate::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: calc(100% - 20px);
+    top: 10px;
+    right: -1px;
+    width: 5px;
+    // background: #666;
+    background: #fff;
+}
+
+.wrapper::-webkit-scrollbar {
+    display: block;
+    width: 5px;
+}
+
+.wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+    background-color: #df862b;
+    border-right: none;
+    border-left: none;
+}
+
+.wrapper::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 10px;
+}
+
+.wrapper::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 10px;
+}

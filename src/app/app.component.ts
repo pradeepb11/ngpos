@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'POS';
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    var element = document.body;
+   
+    element.classList.add("angularPos");
+    console.log( element.classList.add("angularPos"))
+  }
 }
